@@ -1,18 +1,1 @@
-[
-  {
-    "regionID": "1",
-    "regionDescription": "Eastern"
-  },
-  {
-    "regionID": "2",
-    "regionDescription": "Western"
-  },
-  {
-    "regionID": "3",
-    "regionDescription": "Northern"
-  },
-  {
-    "regionID": "4",
-    "regionDescription": "Southern"
-  }
-]
+[{"id":"1","regionDescription":"Eastern"},{"id":"2","regionDescription":"Western"},{"id":"3","regionDescription":"Northern"},{"id":"4","regionDescription":"Southern"}]
