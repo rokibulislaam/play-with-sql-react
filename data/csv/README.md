@@ -49,3 +49,8 @@ Thanks to [@shayden](https://github.com/shayden) for the csv dump. Buyer beware,
 
 ### Territories
 * Has RegionID
+
+
+### Changes made to the data:
+* replaced `<tableName>ID` with `id` in each table
+* replaced `<foreignKey>ID` with `<foreignKey>Id` in each table
