@@ -14,6 +14,8 @@
     "@types/node": "^17.0.32",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "glob": "^8.0.1",
+    "json-server": "^0.17.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-scripts": "5.0.1",
@@ -23,8 +25,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "json-server": "node data/json-server.js",
+    "mock": "json-server --watch data/accumulatedData.js --port 3001"
   },
   "eslintConfig": {
     "extends": [
@@ -46,7 +48,6 @@
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
-    "csvtojson": "^2.0.10",
-    "glob": "^8.0.1"
+    "csvtojson": "^2.0.10"
   }
 }
