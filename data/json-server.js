@@ -11,8 +11,6 @@ const mergedObject = {};
 const server = jsonServer.create();
 // const router = jsonServer.router(mergedObject, {});
 const middlewares = jsonServer.defaults();
-// console.log(router);
-// server.use(router);
 server.use(middlewares);
 
 for (const jsonFilePath of jsonFiles) {
@@ -30,7 +28,6 @@ for (const jsonFilePath of jsonFiles) {
   }
   const filename = path.parse(jsonFilePath).name;
   // mergedObject[filename] = jsonFile;
-  console.log({filename})
   const router = jsonServer.router({ [filename]: jsonFile });
   server.use(router);
 }
