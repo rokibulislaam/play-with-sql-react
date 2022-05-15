@@ -1,4 +1,7 @@
-export const API_ENDPOINT = 'http://localhost:3001/';
+export const API_ENDPOINT =
+  process?.env?.NODE_ENV === 'production'
+    ? process.env.HEROKU_URL
+    : 'http://localhost:3001/api/';
 
 /**
  * Data sourced from: https://www.w3schools.com/sql/sql_ref_keywords.asp
