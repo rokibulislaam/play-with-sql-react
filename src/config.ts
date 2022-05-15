@@ -1,7 +1,12 @@
-export const API_ENDPOINT =
-  process?.env?.NODE_ENV === 'production'
-    ? process.env.HEROKU_URL as string
-    : 'http://localhost:3001/api/';
+let API_ENDPOINT = 'http://localhost:3001/api/';
+
+if (typeof process !== 'undefined') {
+  if (process.env.NODE_ENV === 'production') {
+    API_ENDPOINT = process.env.HEROKU_URL + 'api/';
+  }
+}
+
+export { API_ENDPOINT };
 
 /**
  * Data sourced from: https://www.w3schools.com/sql/sql_ref_keywords.asp
