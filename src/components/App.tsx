@@ -4,9 +4,13 @@ import {
   MantineProvider,
 } from '@mantine/core';
 import { useLocalStorageValue } from '@mantine/hooks';
+import { RunQueryButton } from './Buttons';
 import DataTable from './DataTable';
 import Editor from './Editor';
 import Layout from './Layout';
+
+import EditorRef from 'contexts/EditorRef';
+import GlobalSettings from 'contexts/Settings';
 
 const THEME_KEY = 'theme-scheme';
 
@@ -22,30 +26,25 @@ export default function App() {
   };
 
   return (
-    <div>
-      <ColorSchemeProvider
-        colorScheme={colorScheme}
-        toggleColorScheme={toggleColorScheme}
+    <ColorSchemeProvider
+      colorScheme={colorScheme}
+      toggleColorScheme={toggleColorScheme}
+    >
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{ colorScheme }}
       >
-        <MantineProvider
-          withGlobalStyles
-          withNormalizeCSS
-          theme={{ colorScheme }}
-        >
-          <Layout>
-            <Editor />
-            <DataTable
-              data={[
-                {
-                  company: 'some_company',
-                  email: 'some_email@gmail.com',
-                  name: 'some_name',
-                },
-              ]}
-            />
-          </Layout>
-        </MantineProvider>
-      </ColorSchemeProvider>
-    </div>
+        <EditorRef>
+          <GlobalSettings>
+            <Layout>
+              <Editor />
+              <RunQueryButton />
+              <DataTable />
+            </Layout>
+          </GlobalSettings>
+        </EditorRef>
+      </MantineProvider>
+    </ColorSchemeProvider>
   );
 }

@@ -1,0 +1,1 @@
+export type ListOfTables = { name: string; columns: string[] }[];
