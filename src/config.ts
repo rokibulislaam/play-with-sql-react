@@ -1,6 +1,6 @@
 export const API_ENDPOINT =
   process?.env?.NODE_ENV === 'production'
-    ? process.env.HEROKU_URL
+    ? process.env.HEROKU_URL as string
     : 'http://localhost:3001/api/';
 
 /**
